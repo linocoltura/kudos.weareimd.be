@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home/index');
+});
+
+Route::get('/users', 'UserController@index');
+Route::get('/users/{user}', 'UserController@show');
+
+//Route::get('/compliments/received', function () {
+//    return view('compliments/received');
+//});
+//
+//Route::get('/compliments/given', function () {
+//    return view('compliments/given');
+//});
+
+Route::get('/compliments/received', 'ComplimentsController@received');
+Route::get('/compliments/given', 'ComplimentsController@given');
