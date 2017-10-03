@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('token');
             $table->timestamps();
         });
+
+        factory(App\User::class, 10)->create();
     }
 
     /**

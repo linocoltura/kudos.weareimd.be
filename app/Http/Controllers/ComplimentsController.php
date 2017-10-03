@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Compliment;
 use Illuminate\Http\Request;
 
 class ComplimentsController extends Controller
@@ -12,6 +13,7 @@ class ComplimentsController extends Controller
     }
     public function received()
     {
-        return view('compliments.received');
+        $compliments = Compliment::all();
+        return view('compliments.received', compact('compliments'));
     }
 }

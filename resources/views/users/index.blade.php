@@ -7,9 +7,14 @@
     <h1>Users</h1>
 
     <ul>
-        <li><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt=""><a href="/users/1">Spencer</a></li>
-        <li><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt=""><a href="/users/1">Daryl</a></li>
-        <li><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt=""><a href="/users/1">Mark</a></li>
+        @foreach ($users as $user)
+
+            <li>
+                <h2>{{ $user->name }}</h2>
+                <a href="/users/{{$user->id}}"><img src="{{ $user->avatar }}" alt=""></a>
+            </li>
+
+        @endforeach
     </ul>
 
 @endsection

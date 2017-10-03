@@ -20,6 +20,8 @@ class CreateComplimentsTable extends Migration
             $table->bigInteger('to_id');
             $table->String('message');
         });
+
+        factory(App\Compliment::class, 10)->create();
     }
 
     /**
