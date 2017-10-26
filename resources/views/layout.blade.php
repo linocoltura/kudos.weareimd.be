@@ -42,7 +42,7 @@
                                 {{ csrf_field() }}
                             </form>
                         </li>
-                        <li><img style="max-height: 50px;padding: 5px;border-radius: 100%" src="{{Auth::user()->avatar}}" alt=""></li>
+                        <li><a style="padding: 0;" href="/users/{{Auth::user()->id}}"><img style="max-height: 50px;padding: 5px;border-radius: 100%" src="{{Auth::user()->avatar}}" alt=""></a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->

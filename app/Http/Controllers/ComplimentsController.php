@@ -10,12 +10,13 @@ class ComplimentsController extends Controller
 {
     public function given()
     {
-        return view('compliments.given');
+        $compliments = Compliment::where('from_id', Auth::user()->id)->orderBy('updated_at', 'desc')->get();;
+        return view('compliments.given', compact('compliments'));
     }
 
     public function received()
     {
-        $compliments = Compliment::all();
+        $compliments = Compliment::where('to_id', Auth::user()->id)->orderBy('updated_at', 'desc')->pluck('message');
         return view('compliments.received', compact('compliments'));
     }
 

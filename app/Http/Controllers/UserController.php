@@ -20,8 +20,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $compliments = Compliment::where('to_id', $id->id)->pluck('message');
-        return view('users.user', compact('user'));
+        $compliments = Compliment::where('to_id', $id)->orderBy('updated_at', 'desc')->pluck('message');
+        //dd($compliments);
+        return view('users.user', compact('user', 'compliments'));
     }
 
     public function redirectToProvider()

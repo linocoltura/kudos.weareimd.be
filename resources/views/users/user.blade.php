@@ -30,8 +30,12 @@
 
             <h3>{{$user->name}}'s kudos</h3>
             <br>
-            <ul>
+            <ul style="list-style: none;font-style: italic">
+                @foreach($compliments as $compliment)
 
+                    <li>"{{$compliment}}"</li>
+                    <br>
+                @endforeach
             </ul>
 
         </div>
