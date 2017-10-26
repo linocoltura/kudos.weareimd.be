@@ -21,6 +21,9 @@ Route::get('/home', function () {
 
 Route::get('/users', 'UserController@index');
 Route::get('/users/{user}', 'UserController@show');
+//Route::post('/users/handlefacebookcallback', 'UserController@handlefacebookcallback');
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
 //Route::get('/compliments/received', function () {
 //    return view('compliments/received');
@@ -32,3 +35,7 @@ Route::get('/users/{user}', 'UserController@show');
 
 Route::get('/compliments/received', 'ComplimentsController@received');
 Route::get('/compliments/given', 'ComplimentsController@given');
+Route::post('/compliments', 'ComplimentsController@store');
+
+Auth::routes();
+

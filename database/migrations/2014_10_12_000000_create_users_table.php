@@ -14,16 +14,15 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigInteger('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('avatar');
-            $table->string('avatar_original');
             $table->string('gender');
-            $table->string('token');
-            $table->timestamps();
+            $table->bigInteger('facebook_id');
+            $table->rememberToken();
         });
 
-        factory(App\User::class, 10)->create();
+        //factory(App\User::class, 10)->create();
     }
 
     /**

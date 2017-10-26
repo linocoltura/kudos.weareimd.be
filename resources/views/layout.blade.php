@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="container">
-
         <!-- Static navbar -->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -29,6 +28,21 @@
                         <li><a href="/compliments/received">Received</a></li>
                         <li><a href="/compliments/given">Given</a></li>
                         <li><a href="/users">Users</a></li>
+
+                    </ul>
+                    <ul style="float: right;" class="nav navbar-nav">
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                        <li><img style="max-height: 50px;padding: 5px;border-radius: 100%" src="{{Auth::user()->avatar}}" alt=""></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->

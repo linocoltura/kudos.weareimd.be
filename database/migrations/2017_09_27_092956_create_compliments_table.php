@@ -21,7 +21,7 @@ class CreateComplimentsTable extends Migration
             $table->String('message');
         });
 
-        factory(App\Compliment::class, 10)->create();
+        //factory(App\Compliment::class, 10)->create();
     }
 
     /**
