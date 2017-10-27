@@ -5,14 +5,13 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
 
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                             <!--Other form fields above the button-->
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <h1>Register with Facebook</h1>
+                                    <h1>Login with Facebook</h1>
                                 </div>
                             </div>
                             <hr>
